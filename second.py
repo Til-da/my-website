@@ -2,7 +2,7 @@ import turtle
 import math
 
 # Set up the screen
-turtle.bgcolor("black")
+turtle.bgcolor("black") 
 t = turtle.Turtle()
 t.speed(0)
 t.width(2)
