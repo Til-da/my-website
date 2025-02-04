@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pet and adoption survey</title>
+    <link rel="stylesheet" href="surveyqstyle.css">
+</head>
+<body>
+    <div class="container">
+    <h2>Survey Form</h2>
+    <form action="submit.php" method="post" id="survey" name="Survey">
+        <label for="fname" >First Name:</label>
+        <input type="text" name="First name:" id="fname" autocomplete="off"><br>
+        
+        <label for="lname">Last Name:</label>
+        <input type="text" name="Last Name:" id="lname" autocomplete="off><br>
+
+        <label for="pet-type">What type of pet do you own?</label>
+        <select id="pet-type" name="pet-type" required>
+            <option value="">Select</option>
+            <option value="dog">Dog</option>
+            <option value="cat">Cat</option>
+            <option value="bird">Bird</option>
+            <option value="fish">Fish</option>
+            <option value="reptile">Reptile</option>
+            <option value="other">Other</option>
+        </select><br>
+       
+        
+        <label for="adoption-source">How did you acquire your pet?</label>
+        <select id="acquire" name="acquire" required>
+            <option value="">Select</option>
+            <option value="Adoption center">Adoption center</option>
+            <option value="Breeder">Breeder</option>
+            <option value="Pet store">Pet store</option>
+            <option value="Rescued/found">Rescued/found</option>
+            <option value="other">Other</option>
+        </select><br>
+
+
+        <label>How satisfied were you with the adoption process?</label><br>
+        <input type="radio" name="satisfaction" value="very-satisfied" required> Very Satisfied<br>
+        <input type="radio" name="satisfaction" value="satisfied"> Satisfied<br>
+        <input type="radio" name="satisfaction" value="neutral"> Neutral<br>
+        <input type="radio" name="satisfaction" value="dissatisfied"> Dissatisfied<br>
+        <input type="radio" name="satisfaction" value="very-dissatisfied"> Very Dissatisfied<br>
+
+        <label for="service-used">Have you used any of our pet care services?</label>
+        <select id="service-used" name="service-used" required>
+            <option value="">Select</option>
+            <option value="grooming">Grooming</option>
+            <option value="vet-care">Veterinary Care</option>
+            <option value="training">Training</option>
+            <option value="none">No, I haven't</option>x
+        </select><br>
+
+        <label for="recommend">Would you recommend our adoption services?</label>
+        <select id="recommend" name="recommend" required>
+            <option value="">Select</option>
+            <option value="yes">Yes</option>
+            <option value="no">No</option>
+            <option value="maybe">Maybe</option>
+        </select><br>
+
+        <label for="feedback">Any additional comments or suggestions?</label>
+        <textarea id="feedback" name="feedback" rows="4"></textarea autocomplete="off"><br><br>
+
+        <button type= "submit">Done</button>
+    </form>
+            <div class="thank-you" id="thankYouMessage">Thank you for your feedback!</div>
+
+    </div>
+    <script>
+        document.getElementById('survey').addEventListener('submit', function(event) {
+            event.preventDefault();
+            document.getElementById('survey').style.display = 'none';
+            document.getElementById('thankYouMessage').style.display = 'block';
+        });
+    </script>
+</body>
+</html>
